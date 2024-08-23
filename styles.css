@@ -1,0 +1,193 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FAF3E0; /* Couleur crème */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #FF6D00;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav button {
+    background-color: #FF6D00;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+nav button.active,
+nav button:hover {
+    background-color: #FF8C00;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#seance-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seance-card {
+    width: 100%;
+    background-color: #FFFFFF; /* Fond blanc pour les cartes */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.seance-card h3 {
+    margin: 0;
+    color: #FF6D00;
+    font-size: 24px;
+}
+
+.seance-card p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.seance-card[data-status="done"] {
+    background-color: #FF6D00;
+    color: white;
+}
+
+.seance-card[data-status="skipped"] {
+    background-color: #E53935;
+    color: white;
+}
+
+#list-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #FFFFFF; /* Fond blanc pour la liste */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    overflow-y: auto;
+}
+
+#list-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #FF6D00;
+}
+
+#list-container select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #FF6D00;
+    color: white;
+    cursor: pointer;
+    appearance: none;
+}
+
+#week-programme p {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #FAF3E0; /* Fond crème pour les éléments de la liste */
+    border-radius: 10px;
+}
+
+#week-programme p strong {
+    color: #FF6D00;
+}
+
+#profile-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #FFFFFF; /* Fond blanc pour le profil */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+#profile-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #FF6D00;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px; /* Espacement entre les champs de minutes et de secondes */
+}
+
+.input-group input {
+    flex: 1; /* Les champs prendront chacun une part égale de l'espace disponible */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+}
+
+.form-group input[readonly] {
+    background-color: #FAF3E0; /* Fond crème pour les champs en lecture seule */
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        padding: 10px;
+    }
+
+    #seance-container {
+        max-width: 100%;
+    }
+
+    .seance-card {
+        width: 100%;
+        height: auto;
+    }
+}

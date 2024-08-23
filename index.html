@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan d'entraînement 10 km</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Plan d'entraînement 10 km</h1>
+        <nav>
+            <button id="seance-view-btn" class="active">Séance</button>
+            <button id="list-view-btn">Liste complète</button>
+            <button id="profile-view-btn">Profil</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="seance-container">
+            <!-- Les séances individuelles seront injectées ici par JavaScript -->
+        </div>
+        <div id="list-container" style="display: none;">
+            <label for="week-select">Choisir la semaine :</label>
+            <select id="week-select">
+                <!-- Options des semaines seront injectées ici par JavaScript -->
+            </select>
+            <div id="week-programme">
+                <!-- Le programme de la semaine sélectionnée sera injecté ici par JavaScript -->
+            </div>
+        </div>
+        <div id="profile-container" style="display: none;">
+            <h2>Profil</h2>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="vma">VMA (km/h):</label>
+                    <input type="number" id="vma" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label for="fcmax">FCMax (bpm):</label>
+                    <input type="number" id="fcmax">
+                </div>
+                <div class="form-group">
+                    <label for="chrono-10km-min">Chrono 10km:</label>
+                    <div class="input-group">
+                        <input type="number" id="chrono-10km-min" min="0" placeholder="min">
+                        <input type="number" id="chrono-10km-sec" min="0" max="59" placeholder="sec">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="chrono-5km-min">Chrono 5km:</label>
+                    <div class="input-group">
+                        <input type="number" id="chrono-5km-min" min="0" placeholder="min">
+                        <input type="number" id="chrono-5km-sec" min="0" max="59" placeholder="sec">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="chrono-3km-min">Chrono 3km:</label>
+                    <div class="input-group">
+                        <input type="number" id="chrono-3km-min" min="0" placeholder="min">
+                        <input type="number" id="chrono-3km-sec" min="0" max="59" placeholder="sec">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="seances-done">Nombre de séances faites :</label>
+                    <input type="number" id="seances-done" readonly>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
